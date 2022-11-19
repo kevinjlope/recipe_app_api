@@ -1,17 +1,10 @@
 version: '3.9'
-secrets:
-  secret_key:
-    external: true
 services:
   app:
     build:
       context: .
       args:
         - DEV=true
-    secrets:
-      - secret_key
-    environment:
-      - SECRET_KEY_FILE=./app/.env
     ports:
       - "8000:8000"
     volumes:
